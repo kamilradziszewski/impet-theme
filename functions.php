@@ -190,3 +190,58 @@ function remove_menu_items() {
   remove_menu_page( 'edit-comments.php' );
 }
 add_action( 'admin_menu', 'remove_menu_items' );
+
+
+
+
+
+/*******************************************************************************
+ * Returns ID based on SLUG
+ */
+function get_id_by_slug($page_slug) {
+  $page = get_page_by_path($page_slug);
+  if ($page) {
+    return $page->ID;
+  } else {
+    return null;
+  }
+}
+
+
+
+
+
+/*******************************************************************************
+ * Create custom metaboxes with CMB2
+ */
+add_action( 'cmb2_admin_init', 'cmb2_metaboxes' );
+/**
+ * Define the metabox and field configurations.
+ */
+function cmb2_metaboxes() {
+
+	// Start with an underscore to hide fields from custom fields list
+	$prefix = '_impet_';
+
+	/**
+	 * Initiate the metabox for CENNIK page
+	 */
+	$cmb = new_cmb2_box( array(
+		'id'            => 'price_list',
+		'title'         => __( 'Legal Notice', 'cmb2' ),
+    'object_types'  => array( 'page', ),
+    'show_on'       => array( 'key' => 'id',
+                              'value' => array( get_id_by_slug('cennik') ) ),
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => false,
+	) );
+
+	$cmb->add_field( array(
+		'name'       => __( 'Legal Notice Text', 'cmb2' ),
+		'desc'       => __( 'Legal notice about prices and offer', 'cmb2' ),
+		'id'         => $prefix . 'price_list_legal_notice',
+		'type'       => 'textarea_small',
+	) );
+
+}
