@@ -242,6 +242,74 @@ function cmb2_metaboxes() {
 		'desc'       => __( 'Legal notice about prices and offer', 'cmb2' ),
 		'id'         => $prefix . 'price_list_legal_notice',
 		'type'       => 'textarea_small',
+  ) );
+
+  /**
+	 * Initiate the metabox for KONTAKT page
+	 */
+	$cmb = new_cmb2_box( array(
+		'id'            => 'contact',
+		'title'         => __( 'Contact Data', 'cmb2' ),
+    'object_types'  => array( 'page', ),
+    'show_on'      => array( 'key' => 'id',
+                             'value' => array( get_id_by_slug('kontakt') ) ),
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true,
 	) );
+
+	$cmb->add_field( array(
+		'name'       => __( 'Address', 'cmb2' ),
+		'id'         => $prefix . 'contact_address',
+    'type'       => 'text',
+    'repeatable'     => true,
+  ) );
+
+  $cmb->add_field( array(
+		'name'       => __( 'Telephone', 'cmb2' ),
+		'id'         => $prefix . 'contact_telephone',
+    'type'       => 'text',
+    'repeatable'     => true,
+  ) );
+
+  $cmb->add_field( array(
+		'name'         => __( 'Monday to Friday – OPEN', 'cmb2' ),
+    'id'           => $prefix . 'contact_opening_hours_mon_fri_open',
+    'type'         => 'text_time',
+    'time_format'  => 'H:i',
+  ) );
+
+  $cmb->add_field( array(
+		'name'         => __( 'Monday to Friday – CLOSE', 'cmb2' ),
+    'id'           => $prefix . 'contact_opening_hours_mon_fri_close',
+    'type'         => 'text_time',
+    'time_format'  => 'H:i',
+  ) );
+
+  $cmb->add_field( array(
+		'name'         => __( 'Saturday – OPEN', 'cmb2' ),
+    'id'           => $prefix . 'contact_opening_hours_sat_open',
+    'type'         => 'text_time',
+    'time_format'  => 'H:i',
+  ) );
+
+  $cmb->add_field( array(
+		'name'         => __( 'Saturday – CLOSE', 'cmb2' ),
+    'id'           => $prefix . 'contact_opening_hours_sat_close',
+    'type'         => 'text_time',
+    'time_format'  => 'H:i',
+  ) );
+
+  $cmb->add_field( array(
+		'name'       => __( 'Email', 'cmb2' ),
+		'id'         => $prefix . 'contact_email',
+		'type'       => 'text_email',
+  ) );
+
+  $cmb->add_field( array(
+		'name'       => __( 'Facebook', 'cmb2' ),
+		'id'         => $prefix . 'contact_facebook',
+		'type'       => 'text_url',
+  ) );
 
 }
