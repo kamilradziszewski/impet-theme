@@ -312,4 +312,39 @@ function cmb2_metaboxes() {
 		'type'       => 'text_url',
   ) );
 
+  /**
+	 * Initiate the metabox for PRODUCTS post type
+	 */
+	$cmb = new_cmb2_box( array(
+		'id'            => 'products',
+		'title'         => __( 'Product Details', 'cmb2' ),
+    'object_types'  => array( 'products', ),
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true,
+  ) );
+
+  $cmb->add_field( array(
+    'name'          => __( 'Price', 'cmb2' ),
+    'id'            => $prefix . 'products_price',
+    'type'          => 'text_money',
+    'before_field'  => 'PLN',
+  ) );
+
+  $cmb->add_field( array(
+    'name'          => __( 'Product origin', 'cmb2' ),
+    'id'            => $prefix . 'products_origin',
+    'type'          => 'radio',
+    'options'          => array(
+      'polski'        => __( 'Węgiel polski', 'cmb2' ),
+      'importowany'   => __( 'Węgiel importowany', 'cmb2' ),
+    ),
+  ) );
+
+  $cmb->add_field( array(
+    'name'          => __( 'Extra information', 'cmb2' ),
+    'id'            => $prefix . 'products_extra_info',
+    'type'          => 'text',
+  ) );
+
 }
