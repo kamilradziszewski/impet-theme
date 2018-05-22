@@ -120,3 +120,60 @@ function impet_bialystok_register_required_plugins() {
 
 	tgmpa( $plugins, $config );
 }
+
+
+
+
+
+/*******************************************************************************
+ * Register PRODUCTS Custom Post Type
+ */
+function products_post_type() {
+
+  $labels = array(
+    'name'                  => _x(  'Products',
+                                    'Post Type General Name',
+                                    'impet-bialystok' ),
+    'singular_name'         => _x(  'Product',
+                                    'Post Type Singular Name',
+                                    'impet-bialystok' ),
+    'menu_name'             => __( 'Products', 'impet-bialystok' ),
+    'name_admin_bar'        => __( 'Product', 'impet-bialystok' ),
+    'archives'              => __( 'Product Archives', 'impet-bialystok' ),
+    'attributes'            => __( 'Product Attributes', 'impet-bialystok' ),
+    'parent_item_colon'     => __( 'Parent Product:', 'impet-bialystok' ),
+    'all_items'             => __( 'All Products', 'impet-bialystok' ),
+    'add_new_item'          => __( 'Add New Product', 'impet-bialystok' ),
+    'add_new'               => __( 'Add New', 'impet-bialystok' ),
+    'new_item'              => __( 'New Product', 'impet-bialystok' ),
+    'edit_item'             => __( 'Edit Product', 'impet-bialystok' ),
+    'update_item'           => __( 'Update Product', 'impet-bialystok' ),
+    'view_item'             => __( 'View Product', 'impet-bialystok' ),
+    'view_items'            => __( 'View Products', 'impet-bialystok' ),
+    'search_items'          => __( 'Search Product', 'impet-bialystok' ),
+    'not_found'             => __( 'Not found', 'impet-bialystok' ),
+    'not_found_in_trash'    => __( 'Not found in Trash', 'impet-bialystok' ),
+    'featured_image'        => __( 'Featured Image', 'impet-bialystok' ),
+    'set_featured_image'    => __( 'Set featured image', 'impet-bialystok' ),
+    'remove_featured_image' => __( 'Remove featured image', 'impet-bialystok' ),
+    'use_featured_image'    => __( 'Use as featured image', 'impet-bialystok' ),
+    'insert_into_item'      => __( 'Insert into Product', 'impet-bialystok' ),
+    'uploaded_to_this_item' => __( 'Uploaded to this Product', 'impet-bialystok' ),
+    'items_list'            => __( 'Products list', 'impet-bialystok' ),
+    'items_list_navigation' => __( 'Products list navigation', 'impet-bialystok' ),
+    'filter_items_list'     => __( 'Filter Products list', 'impet-bialystok' ),
+  );
+
+  $args = array(
+    'label'                 => __( 'Products', 'impet-bialystok' ),
+    'description'           => __( 'Post Type Description', 'impet-bialystok' ),
+    'labels'                => $labels,
+    'supports'              => array( 'title', 'page-attributes' ),
+    'public'                => true,
+    'menu_position'         => 20,
+    'menu_icon'                => 'dashicons-chart-line',
+  );
+  register_post_type( 'products', $args );
+
+}
+add_action( 'init', 'products_post_type', 0 );
