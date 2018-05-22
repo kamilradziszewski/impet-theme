@@ -177,3 +177,16 @@ function products_post_type() {
 
 }
 add_action( 'init', 'products_post_type', 0 );
+
+
+
+
+
+/*******************************************************************************
+ * Remove Admin Menu items
+ */
+function remove_menu_items() {
+  remove_menu_page( 'edit.php' );
+  remove_menu_page( 'edit-comments.php' );
+}
+add_action( 'admin_menu', 'remove_menu_items' );
