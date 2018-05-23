@@ -1,0 +1,34 @@
+{{ page.content }}
+
+<hr>
+{{ page._impet_price_list_legal_notice }}
+
+<h3>Węgiel polski</h3>
+
+<ol>
+  {% for product in products.polish %}
+    <li>
+      {{ product.title }}
+      {% if product._impet_products_price <= 0 %}
+        &mdash;
+      {% else %}
+        {{ product._impet_products_price|number_format }}
+      {% endif %}
+      {# {{ product._impet_products_origin }} #}
+      {{ product._impet_products_extra_info }}
+    </li>
+{% endfor %}
+</ol>
+
+<h3>Węgiel importowany</h3>
+
+<ol>
+  {% for product in products.imported %}
+    <li>
+      {{ product.title }}
+      {{ product._impet_products_price|number_format }}
+      {# {{ product._impet_products_origin }} #}
+      {{ product._impet_products_extra_info }}
+    </li>
+  {% endfor %}
+</ol>

@@ -1,0 +1,21 @@
+<pre>
+
+{% for address in page._impet_contact_address %}
+{{ address }}
+{% endfor %}
+
+{% for telephone in page._impet_contact_telephone %}
+{{ telephone }} [+48{{ telephone|replace({' ':''}) }}]
+{% endfor %}
+
+{{ page._impet_contact_opening_hours_mon_fri_open }}
+{{ page._impet_contact_opening_hours_mon_fri_close }}
+{{ page._impet_contact_opening_hours_sat_open }}
+{{ page._impet_contact_opening_hours_sat_close }}
+
+{{ page._impet_contact_facebook }}
+
+
+</pre>
+
+{# {{ page.content }} #}
