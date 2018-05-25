@@ -348,3 +348,90 @@ function cmb2_metaboxes() {
   ) );
 
 }
+
+
+
+
+
+/*******************************************************************************
+ * Add columns for PRODUCTS post type in wp_admin
+ */
+// Add custom columns
+function impet_products_columns($columns) {
+  unset( $columns['date'] );
+  $columns['menu_order'] = __( 'Order' );
+  $columns['products_price'] = __( 'Price [PLN]', 'impet_bialystok' );
+  $columns['products_origin'] = __( 'Origin', 'impet_bialystok' );
+  $columns['products_extra_info'] = __( 'Extra Info', 'impet_bialystok' );
+
+  return $columns;
+}
+add_filter( 'manage_products_posts_columns', 'impet_products_columns' );
+
+// Fill custom columns with data
+function impet_products_column( $column, $post_id ) {
+  switch ( $column ) {
+    case 'menu_order':
+      echo get_post_field( 'menu_order', $post_id, true );
+      break;
+    case 'products_price' :
+      $price = get_post_meta( $post_id , '_impet_products_price' , true );
+      if ( $price )
+        echo number_format($price);
+      else
+        _e( 'Unable to get products price', 'impet_bialystok' );
+      break;
+    case 'products_origin' :
+      $origin = get_post_meta( $post_id , '_impet_products_origin' , true );
+      if ( $origin )
+        echo $origin;
+      else
+        _e( 'Unable to get products origin', 'impet_bialystok' );
+      break;
+    case 'products_extra_info' :
+      $extra_info = get_post_meta( $post_id,
+                                   '_impet_products_extra_info',
+                                   true );
+      if ( $extra_info )
+        echo $extra_info;
+      else
+        echo '—';
+      break;
+  }
+}
+add_action( 'manage_products_posts_custom_column',
+            'impet_products_column', 10, 2 );
+
+// Make columns sortable
+function impet_products_sortable_columns( $columns ) {
+  unset( $columns['title'] );
+  $columns['products_price'] = 'price';
+  $columns['products_origin'] = 'origin';
+  return $columns;
+}
+add_filter( 'manage_edit-products_sortable_columns',
+            'impet_products_sortable_columns');
+
+// Implement ordering by meta data
+function impet_sort_meta_columns( $query ) {
+	if( ! is_admin() )
+    return;
+
+  $orderby = $query->get( 'orderby');
+
+  switch ($orderby) {
+    case '':
+      $query->set('meta_key','_impet_products_origin');
+      $query->set('orderby','meta_value');
+      break;
+    case 'price':
+      $query->set('meta_key','_impet_products_price');
+      $query->set('orderby','meta_value_num');
+      break;
+    case 'origin':
+      $query->set('meta_key','_impet_products_origin');
+      $query->set('orderby','meta_value');
+      break;
+  }
+}
+add_action( 'pre_get_posts', 'impet_sort_meta_columns' );
