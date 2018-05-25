@@ -435,3 +435,16 @@ function impet_sort_meta_columns( $query ) {
   }
 }
 add_action( 'pre_get_posts', 'impet_sort_meta_columns' );
+
+
+
+
+
+/*******************************************************************************
+ * Enqueue scripts and styles
+ */
+function impet_bialystok_scripts_and_styles() {
+  wp_enqueue_style( 'impet-bialystok-main',
+                    get_stylesheet_directory_uri() . '/static/dist/css/main.css' );
+}
+add_action( 'wp_enqueue_scripts', 'impet_bialystok_scripts_and_styles' );
