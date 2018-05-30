@@ -1,0 +1,13 @@
+<div class="section-image{% if page.slug == 'o-nas' %} hero{% endif %}"
+     style="background-image: url('{{ page.thumbnail.src('large') }}');">
+  <div class="section-image-matte">
+  </div>
+  <div class="section-image-text">
+    {% if page.slug == 'o-nas' %}
+      <h1>IMPET</h1>
+      <h2>Skład opału</h2>
+    {% else %}
+      {{ page.title }}
+    {% endif %}
+  </div>
+</div>

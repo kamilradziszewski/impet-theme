@@ -1,14 +1,18 @@
 {% extends "base.twig" %}
 
+{% block header %}
+{% endblock %}
+
 {% block content %}
 <div class="content-wrapper">
   <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
     <section class="article-content">
-      <h1 class="article-h1">{{post.title}}</h1>
       <div class="article-body">
-        {{post.content}}
         {% for page in pages %}
-          <h1>{{ page.title }}</h1>
+          {% if page.thumbnail %}
+            {% include "partial/section-image.twig" %}
+          {% endif %}
+
           {% if page.slug == 'o-nas' or page.slug == 'uslugi' %}
             {% include "partial/section-generic.twig" %}
           {% elseif page.slug == 'cennik' %}
