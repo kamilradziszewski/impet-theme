@@ -10,7 +10,7 @@
     "prestart": "npm run clear-dist && mkdirp ./static/dist && mkdirp ./static/dist/js && npm run copy:files",
     "start": "npm-run-all --parallel watch:css watch:js",
     "clear-dist": "rimraf ./static/dist",
-    "copy:files": "npm run copy:js",
+    "copy:files": "npm run copy:js  && npm run copy:fonts",
     "copy:images": "copyfiles -u 3 './static/src/img/**/*' './static/dist/img/' && npm run optimize:images && npm run create-sprite:images",
     "optimize:images": "svgo -f './static/dist/img' --disable=removeViewBox",
     "create-sprite:images": "svgstore -o static/dist/img/icons-sprite.svg static/dist/img/*.svg",
