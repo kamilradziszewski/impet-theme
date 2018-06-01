@@ -4,26 +4,22 @@
 {% endblock %}
 
 {% block content %}
-<div class="content-wrapper">
-  <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-    <section class="article-content">
-      <div class="article-body">
-        {% for page in pages %}
-          {% if page.thumbnail %}
-            {% include "partial/section-image.twig" %}
-          {% endif %}
+  {% for page in pages %}
 
-          {% if page.slug == 'o-nas' or page.slug == 'uslugi' %}
-            {% include "partial/section-generic.twig" %}
-          {% elseif page.slug == 'cennik' %}
-            {% include "partial/section-price-list.twig" %}
-          {% elseif page.slug == 'kontakt' %}
-            {% include "partial/section-contact.twig" %}
-          {% endif %}
-        {% endfor %}
-      </div>
+    {% if page.thumbnail %}
+      {% include "partial/section-image.twig" %}
+    {% endif %}
+
+    <section class="page">
+      {% if page.slug == 'o-nas' or page.slug == 'uslugi' %}
+        {% include "partial/section-generic.twig" %}
+      {% elseif page.slug == 'cennik' %}
+        {% include "partial/section-price-list.twig" %}
+      {% elseif page.slug == 'kontakt' %}
+        {% include "partial/section-contact.twig" %}
+      {% endif %}
     </section>
-  </article>
-</div>
+
+  {% endfor %}
 <!-- /content-wrapper -->
 {% endblock %}

@@ -1,5 +1,11 @@
-<div class="section-image{% if page.slug == 'o-nas' %} hero{% endif %}"
-     style="background-image: url('{{ page.thumbnail.src('large') }}');">
+<section class="parallax{% if page.slug == 'o-nas' %} hero{% endif %}">
+  <div class="rellax"
+       data-rellax-speed="-2"
+       data-rellax-percentage="0.5">
+    <div class="section-image"
+         style="background-image: url('{{ page.thumbnail.src('large') }}');">
+    </div>
+  </div>
   <div class="section-image-matte">
   </div>
   <div class="section-image-text">
@@ -10,4 +16,4 @@
       {{ page.title }}
     {% endif %}
   </div>
-</div>
+</section>
