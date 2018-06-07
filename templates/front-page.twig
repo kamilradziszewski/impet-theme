@@ -11,12 +11,14 @@
     {% endif %}
 
     <section class="page">
-      {% if page.slug == 'o-nas' or page.slug == 'uslugi' %}
-        {% include "partial/section-generic.twig" %}
+      {% if page.slug == 'o-nas' %}
+        {% include "partial/section/section-about.twig" %}
+      {% elseif page.slug == 'uslugi' %}
+        {% include "partial/section/section-services.twig" %}
       {% elseif page.slug == 'cennik' %}
-        {% include "partial/section-price-list.twig" %}
+        {% include "partial/section/section-price-list.twig" %}
       {% elseif page.slug == 'kontakt' %}
-        {% include "partial/section-contact.twig" %}
+        {% include "partial/section/section-contact.twig" %}
       {% endif %}
     </section>
 

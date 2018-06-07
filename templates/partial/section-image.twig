@@ -1,6 +1,6 @@
 <section class="parallax{% if page.slug == 'o-nas' %} hero{% endif %}">
   <div class="rellax"
-       data-rellax-speed="-2"
+       data-rellax-speed="0"
        data-rellax-percentage="0.5">
     <div class="section-image"
          style="background-image: url('{{ page.thumbnail.src('large') }}');">
@@ -9,11 +9,13 @@
   <div class="section-image-matte">
   </div>
   <div class="section-image-text">
-    {% if page.slug == 'o-nas' %}
-      <h1>IMPET</h1>
-      <h2>Skład opału</h2>
-    {% else %}
-      {{ page.title }}
-    {% endif %}
+    <div class="grid-container">
+      {% if page.slug == 'o-nas' %}
+        <h1>IMPET</h1>
+        <h2>Skład opału</h2>
+      {% else %}
+        {{ page.title }}
+      {% endif %}
+    </div>
   </div>
 </section>
