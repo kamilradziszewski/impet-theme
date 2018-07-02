@@ -12,7 +12,7 @@
     "clear-dist": "rimraf ./static/dist",
     "copy:files": "npm run copy:js && npm run copy:fonts && npm run copy:images",
     "copy:images": "copyfiles -u 3 './static/src/img/**/*' './static/dist/img/' && npm run optimize:images && npm run create-sprite:images",
-    "optimize:images": "svgo -f './static/dist/img' --disable=removeViewBox",
+    "optimize:images": "svgo -f './static/dist/img' --disable=removeViewBox --enable=addAttributesToSVGElement",
     "create-sprite:images": "svgstore -o static/dist/img/icons-sprite.svg static/dist/img/*.svg",
     "copy:fonts": "copyfiles -f './static/src/fonts/**/*' './static/dist/fonts/'",
     "watch:css": "nodemon -w ./static/src/sass -e sass -x 'npm run build:css'",

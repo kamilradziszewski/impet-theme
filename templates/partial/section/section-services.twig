@@ -1,8 +1,11 @@
-<div class="row">
-  <div class="columns small-12 medium-8">
+<div class="grid-container grid-x grid-padding-x">
+  <div class="cell medium-9 large-8 large-offset-1">
     {{ page.content }}
   </div>
-  <div class="columns medium-4 section-icon">
-    ikona
+  <div class="cell shrink section-icon">
+    <svg class="icon-truck">
+      <use xlink:href="{{ theme.link }}/static/dist/img/icons-sprite.svg#icon-truck">
+      </use>
+    </svg>
   </div>
 </div>
