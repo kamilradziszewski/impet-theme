@@ -21,14 +21,13 @@ section
       color: white
       font-family: 'Source Sans Pro'
       font-size: 3rem
-      left: 5vw
       position: absolute
       text-shadow: 0 0 5px rgba(0,0,0,1)
       top: 5vh
       width: 100%
       z-index: 300
-      @include breakpoint(11100px)
-        left: 0
+      @include breakpoint(1240px down)
+        padding-left: 2vw
   &.hero
     h1,
     h2
