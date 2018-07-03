@@ -1,16 +1,72 @@
-<div class="x_rellax">
-  {% for address in page._impet_contact_address %}
-  {{ address }}
-  {% endfor %}
+<div class="grid-container grid-x grid-padding-x align-spaced">
+  <div class="cell shrink align-self-top">
 
-  {% for telephone in page._impet_contact_telephone %}
-  {{ telephone }} [+48{{ telephone|replace({' ':''}) }}]
-  {% endfor %}
+    <div class="address-cell">
+      <svg class="icon-location">
+        <use xlink:href="{{ theme.link }}/static/dist/img/icons-sprite.svg#icon-location">
+        </use>
+      </svg>
+      {% for address in page._impet_contact_address %}
+        {{ address|wpautop }}
+      {% endfor %}
+    </div>
 
-  {{ page._impet_contact_opening_hours_mon_fri_open }}
-  {{ page._impet_contact_opening_hours_mon_fri_close }}
-  {{ page._impet_contact_opening_hours_sat_open }}
-  {{ page._impet_contact_opening_hours_sat_close }}
+    <div class="address-cell">
+      <svg class="icon-phone">
+        <use xlink:href="{{ theme.link }}/static/dist/img/icons-sprite.svg#icon-phone">
+        </use>
+      </svg>
+      {% for telephone in page._impet_contact_telephone %}
+        <p>
+          <a href="tel:+48{{ telephone|replace({' ':''}) }}">{{ telephone }}</a>
+        </p>
+      {% endfor %}
+    </div>
 
-  {{ page._impet_contact_facebook }}
+    <div class="address-cell">
+      <svg class="icon-email">
+        <use xlink:href="{{ theme.link }}/static/dist/img/icons-sprite.svg#icon-email">
+        </use>
+      </svg>
+      <p>
+        <a href="mailto:{{ page._impet_contact_email }}">{{ page._impet_contact_email }}</a>
+      </p>
+    </div>
+
+    <div class="address-cell">
+      <svg class="icon-time">
+        <use xlink:href="{{ theme.link }}/static/dist/img/icons-sprite.svg#icon-time">
+        </use>
+      </svg>
+      <p>
+        Pn–Pt {{ page._impet_contact_opening_hours_mon_fri_open }}–{{ page._impet_contact_opening_hours_mon_fri_close }}
+      </p>
+      <p>
+        Sb {{ page._impet_contact_opening_hours_sat_open }}—{{ page._impet_contact_opening_hours_sat_close }}
+      </p>
+    </div>
+
+  </div>
+
+  <div class="cell shrink align-self-top">
+    <div class="map">
+      {{ page.content|striptags('<iframe>') }}
+    </div>
+  </div>
+
+</div>
+
+<div class="grid-container grid-x grid-padding-x align-spaced">
+  <div class="cell shrink">
+    <a href="" class="facebook-link">
+      <svg class="icon-facebook">
+        <use xlink:href="{{ theme.link }}/static/dist/img/icons-sprite.svg#icon-facebook">
+        </use>
+      </svg>
+      <span>
+        facebook.com/IMPET
+      </span>
+    </a>
+    <!-- {{ page._impet_contact_facebook }} -->
+  </div>
 </div>

@@ -21,8 +21,9 @@ body
   font-size: 1.4rem
 
 a
-  color: $black
+  color: $red
   text-decoration: none
+  transition: color ease-in-out 0.3s
   &:hover,
   &:focus
-    color: $dark-yellow
+    color: darken($red, 30)
