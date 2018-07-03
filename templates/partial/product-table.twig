@@ -1,0 +1,18 @@
+<table>
+  <tbody>
+    {% for product in products %}
+    <tr>
+      <td>
+        {{ product.title }}
+        <span class="extra-info">
+          {{ product._impet_products_extra_info }}
+        </span>
+      </td>
+      <td>
+        {% if product._impet_products_price
+        <=0 %} &mdash; {% else %} {{ product._impet_products_price|number_format }} {%
+          endif %} </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

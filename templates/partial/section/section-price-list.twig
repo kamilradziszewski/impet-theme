@@ -1,36 +1,22 @@
-<div class="x_rellax">
-  {{ page.content }}
+<div class="grid-container grid-x align-spaced">
+  <div class="cell">
+    {{ page.content }}
 
-  <hr>
-  {{ page._impet_price_list_legal_notice }}
+    <div class="legal-notice">
+      {{ page._impet_price_list_legal_notice }}
+    </div>
+  </div>
 
-  <h3>Węgiel polski</h3>
+  <div class="cell medium-5 align-self-top">
+    <h3 class="products-origin">Węgiel polski</h3>
+    {% include '/partial/product-table.twig'
+       with {products: products.polish} %}
+  </div>
 
-  <ol>
-    {% for product in products.polish %}
-      <li>
-        {{ product.title }}
-        {% if product._impet_products_price <= 0 %}
-          &mdash;
-        {% else %}
-          {{ product._impet_products_price|number_format }}
-        {% endif %}
-        {# {{ product._impet_products_origin }} #}
-        {{ product._impet_products_extra_info }}
-      </li>
-  {% endfor %}
-  </ol>
+  <div class="cell medium-5 align-self-top">
+    <h3 class="products-origin">Węgiel importowany</h3>
+    {% include '/partial/product-table.twig'
+       with {products: products.imported} %}
+  </div>
 
-  <h3>Węgiel importowany</h3>
-
-  <ol>
-    {% for product in products.imported %}
-      <li>
-        {{ product.title }}
-        {{ product._impet_products_price|number_format }}
-        {# {{ product._impet_products_origin }} #}
-        {{ product._impet_products_extra_info }}
-      </li>
-    {% endfor %}
-  </ol>
 </div>
