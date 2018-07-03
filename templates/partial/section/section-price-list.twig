@@ -1,4 +1,4 @@
-<div class="grid-container grid-x align-spaced">
+<div class="grid-container grid-x grid-padding-x align-spaced">
   <div class="cell">
     {{ page.content }}
 
@@ -7,13 +7,13 @@
     </div>
   </div>
 
-  <div class="cell medium-5 align-self-top">
+  <div class="cell medium-6 align-self-top">
     <h3 class="products-origin">Węgiel polski</h3>
     {% include '/partial/product-table.twig'
        with {products: products.polish} %}
   </div>
 
-  <div class="cell medium-5 align-self-top">
+  <div class="cell medium-6 align-self-top">
     <h3 class="products-origin">Węgiel importowany</h3>
     {% include '/partial/product-table.twig'
        with {products: products.imported} %}
