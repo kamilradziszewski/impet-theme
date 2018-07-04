@@ -1,1 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 10h-2v2h2v6h3v-6h1.82l.18-2h-2v-.833c0-.478.096-.667.558-.667h1.442v-2.5h-2.404c-1.798 0-2.596.792-2.596 2.308v1.692z"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="24"
+   height="24"
+   viewBox="0 0 24 24"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="icon-facebook.svg"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1409"
+     inkscape:window-height="836"
+     id="namedview6"
+     showgrid="false"
+     inkscape:zoom="9.8333333"
+     inkscape:cx="12"
+     inkscape:cy="12"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg4" />
+  <path
+     d="m 12,2.416667 c 5.28425,0 9.58333,4.299083 9.58333,9.583333 0,5.28425 -4.29908,9.58333 -9.58333,9.58333 C 6.71575,21.58333 2.416667,17.28425 2.416667,12 2.416667,6.71575 6.71575,2.416667 12,2.416667 Z M 12,0.5 C 5.649125,0.5 0.5,5.649125 0.5,12 0.5,18.350875 5.649125,23.5 12,23.5 18.350875,23.5 23.5,18.350875 23.5,12 23.5,5.649125 18.350875,0.5 12,0.5 Z m -1.916667,9.58333 H 8.166667 V 12 h 1.916666 v 5.75 H 12.95833 V 12 H 14.7025 L 14.875,10.08333 H 12.95833 V 9.285042 c 0,-0.458084 0.092,-0.639209 0.53475,-0.639209 H 14.875 V 6.25 h -2.30383 c -1.72309,0 -2.487837,0.759 -2.487837,2.211833 z"
+     id="path2"
+     inkscape:connector-curvature="0"
+     style="stroke-width:0.95833337" />
+</svg>
