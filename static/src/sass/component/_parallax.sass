@@ -8,15 +8,16 @@ section
       background-repeat: no-repeat
       background-size: cover
       height: 100%
-    .section-image-matte
-      background: rgba(0,0,0,0.4)
-      background: linear-gradient(110deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%)
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=1 )
-      height: 100%
-      position: absolute
-      top: 0
-      width: 100%
-      z-index: 200
+      position: relative
+      top: -1%
+      &::after
+        background: rgba(0,0,0,0.4)
+        background: linear-gradient(110deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%)
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=1 )
+        content: ''
+        height: 100%
+        position: absolute
+        width: 100%
     .section-image-text
       color: white
       font-family: 'Source Sans Pro'
