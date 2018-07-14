@@ -1,5 +1,18 @@
 {% extends "base.twig" %}
 
+{% block header %}
+{% endblock %}
+
 {% block content %}
-	Sorry, we couldn't find what you're looking for.
+	{% set page = page|first %}
+
+	{% if page.thumbnail %}
+		{% include "partial/section-image.twig" %}
+	{% endif %}
+
+	<div class="page-not-found grid-container grid-x grid-padding-x">
+		<div class="cell">
+			Strona o podanym adresie nie istnieje.
+		</div>
+	</div>
 {% endblock %}
