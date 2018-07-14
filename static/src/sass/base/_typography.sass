@@ -21,25 +21,29 @@ body
   font-size: 1.4rem
 
 a
-  color: $red
-  position: relative
   text-decoration: none
-  transition: color ease-in-out 0.3s
-  &::after
-    background-color: $red
-    bottom: 0
-    content: ''
-    height: 1px
-    left: 0
-    position: absolute
-    transform: scaleX(0)
-    transition: all ease-in-out 0.3s
-    visibility: hidden
-    width: 100%
-  &:hover,
-  &:focus
-    color: darken($red, 30)
+  &.logo-text
+    color: $white
+    display: inline-block
+  &:not(.logo-text)
+    color: $red
+    position: relative
+    transition: color ease-in-out 0.3s
     &::after
-      background-color: darken($red, 30)
-      transform: scaleX(1)
-      visibility: visible
+      background-color: $red
+      bottom: 0
+      content: ''
+      height: 1px
+      left: 0
+      position: absolute
+      transform: scaleX(0)
+      transition: all ease-in-out 0.3s
+      visibility: hidden
+      width: 100%
+    &:hover,
+    &:focus
+      color: darken($red, 30)
+      &::after
+        background-color: darken($red, 30)
+        transform: scaleX(1)
+        visibility: visible

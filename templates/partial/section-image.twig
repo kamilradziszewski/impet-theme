@@ -9,8 +9,10 @@
   <div class="section-image-text">
     <div class="grid-container">
       {% if page.slug == 'o-nas' %}
-        <h1>IMPET</h1>
-        <h2>Skład opału</h2>
+        <a href="{{ site.url }}" class="logo-text">
+          <h1>IMPET</h1>
+          <h2>Skład opału</h2>
+        </a>
       {% else %}
         {{ page.title }}
       {% endif %}
