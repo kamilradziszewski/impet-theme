@@ -15,7 +15,7 @@ $context['products']['polish'] = Timber::get_posts(
   array(
     'post_type'  => 'products',
     'meta_key'   => '_impet_products_origin',
-    'meta_value' => 'polski',
+    'meta_value' => 'polish',
     'orderby'    => array(
       'menu_order' => 'ASC'
     )
@@ -26,7 +26,7 @@ $context['products']['imported'] = Timber::get_posts(
   array(
     'post_type'  => 'products',
     'meta_key'   => '_impet_products_origin',
-    'meta_value' => 'importowany',
+    'meta_value' => 'imported',
     'orderby'    => array(
       'menu_order' => 'ASC'
     )

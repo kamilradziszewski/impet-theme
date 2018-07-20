@@ -141,7 +141,7 @@ function products_post_type() {
     'name_admin_bar'        => __( 'Product', 'impet-bialystok' ),
     'archives'              => __( 'Product Archives', 'impet-bialystok' ),
     'attributes'            => __( 'Product Attributes', 'impet-bialystok' ),
-    'parent_item_colon'     => __( 'Parent Product:', 'impet-bialystok' ),
+    'parent_item_colon'     => __( 'Parent Product', 'impet-bialystok' ),
     'all_items'             => __( 'All Products', 'impet-bialystok' ),
     'add_new_item'          => __( 'Add New Product', 'impet-bialystok' ),
     'add_new'               => __( 'Add New', 'impet-bialystok' ),
@@ -228,7 +228,7 @@ function cmb2_metaboxes() {
 	 */
 	$cmb = new_cmb2_box( array(
 		'id'            => 'price_list',
-		'title'         => __( 'Legal Notice', 'cmb2' ),
+		'title'         => __( 'Legal Notice', 'impet-bialystok' ),
     'object_types'  => array( 'page', ),
     'show_on'       => array( 'key' => 'id',
                               'value' => array( get_id_by_slug('cennik') ) ),
@@ -238,8 +238,8 @@ function cmb2_metaboxes() {
 	) );
 
 	$cmb->add_field( array(
-		'name'       => __( 'Legal Notice Text', 'cmb2' ),
-		'desc'       => __( 'Legal notice about prices and offer', 'cmb2' ),
+		'name'       => __( 'Legal Notice Text', 'impet-bialystok' ),
+		'desc'       => __( 'Legal notice about prices and offer', 'impet-bialystok' ),
 		'id'         => $prefix . 'price_list_legal_notice',
 		'type'       => 'textarea_small',
   ) );
@@ -249,7 +249,7 @@ function cmb2_metaboxes() {
 	 */
 	$cmb = new_cmb2_box( array(
 		'id'            => 'contact',
-		'title'         => __( 'Contact Data', 'cmb2' ),
+		'title'         => __( 'Contact Data', 'impet-bialystok' ),
     'object_types'  => array( 'page', ),
     'show_on'      => array( 'key' => 'id',
                              'value' => array( get_id_by_slug('kontakt') ) ),
@@ -259,55 +259,55 @@ function cmb2_metaboxes() {
 	) );
 
 	$cmb->add_field( array(
-		'name'       => __( 'Address', 'cmb2' ),
+		'name'       => __( 'Address', 'impet-bialystok' ),
 		'id'         => $prefix . 'contact_address',
     'type'       => 'text',
     'repeatable'     => true,
   ) );
 
   $cmb->add_field( array(
-		'name'       => __( 'Telephone', 'cmb2' ),
+		'name'       => __( 'Telephone', 'impet-bialystok' ),
 		'id'         => $prefix . 'contact_telephone',
     'type'       => 'text',
     'repeatable'     => true,
   ) );
 
   $cmb->add_field( array(
-		'name'         => __( 'Monday to Friday – OPEN', 'cmb2' ),
+		'name'         => __( 'Monday to Friday – OPEN', 'impet-bialystok' ),
     'id'           => $prefix . 'contact_opening_hours_mon_fri_open',
     'type'         => 'text_time',
     'time_format'  => 'H:i',
   ) );
 
   $cmb->add_field( array(
-		'name'         => __( 'Monday to Friday – CLOSE', 'cmb2' ),
+		'name'         => __( 'Monday to Friday – CLOSE', 'impet-bialystok' ),
     'id'           => $prefix . 'contact_opening_hours_mon_fri_close',
     'type'         => 'text_time',
     'time_format'  => 'H:i',
   ) );
 
   $cmb->add_field( array(
-		'name'         => __( 'Saturday – OPEN', 'cmb2' ),
+		'name'         => __( 'Saturday – OPEN', 'impet-bialystok' ),
     'id'           => $prefix . 'contact_opening_hours_sat_open',
     'type'         => 'text_time',
     'time_format'  => 'H:i',
   ) );
 
   $cmb->add_field( array(
-		'name'         => __( 'Saturday – CLOSE', 'cmb2' ),
+		'name'         => __( 'Saturday – CLOSE', 'impet-bialystok' ),
     'id'           => $prefix . 'contact_opening_hours_sat_close',
     'type'         => 'text_time',
     'time_format'  => 'H:i',
   ) );
 
   $cmb->add_field( array(
-		'name'       => __( 'Email', 'cmb2' ),
+		'name'       => __( 'Email', 'impet-bialystok' ),
 		'id'         => $prefix . 'contact_email',
 		'type'       => 'text_email',
   ) );
 
   $cmb->add_field( array(
-		'name'       => __( 'Facebook', 'cmb2' ),
+		'name'       => __( 'Facebook', 'impet-bialystok' ),
 		'id'         => $prefix . 'contact_facebook',
 		'type'       => 'text_url',
   ) );
@@ -317,7 +317,7 @@ function cmb2_metaboxes() {
 	 */
 	$cmb = new_cmb2_box( array(
 		'id'            => 'products',
-		'title'         => __( 'Product Details', 'cmb2' ),
+		'title'         => __( 'Product Details', 'impet-bialystok' ),
     'object_types'  => array( 'products', ),
 		'context'       => 'normal',
 		'priority'      => 'high',
@@ -325,24 +325,24 @@ function cmb2_metaboxes() {
   ) );
 
   $cmb->add_field( array(
-    'name'          => __( 'Price', 'cmb2' ),
+    'name'          => __( 'Price', 'impet-bialystok' ),
     'id'            => $prefix . 'products_price',
     'type'          => 'text_money',
     'before_field'  => 'PLN',
   ) );
 
   $cmb->add_field( array(
-    'name'          => __( 'Product origin', 'cmb2' ),
+    'name'          => __( 'Product origin', 'impet-bialystok' ),
     'id'            => $prefix . 'products_origin',
     'type'          => 'radio',
     'options'          => array(
-      'polski'        => __( 'Węgiel polski', 'cmb2' ),
-      'importowany'   => __( 'Węgiel importowany', 'cmb2' ),
+      'polish'     => _x( 'Polish', 'Products origin', 'impet-bialystok' ),
+      'imported'   => _x( 'Imported', 'Products origin', 'impet-bialystok' ),
     ),
   ) );
 
   $cmb->add_field( array(
-    'name'          => __( 'Extra information', 'cmb2' ),
+    'name'          => __( 'Extra information', 'impet-bialystok' ),
     'id'            => $prefix . 'products_extra_info',
     'type'          => 'text',
   ) );
@@ -360,9 +360,9 @@ function cmb2_metaboxes() {
 function impet_products_columns($columns) {
   unset( $columns['date'] );
   $columns['menu_order'] = __( 'Order' );
-  $columns['products_price'] = __( 'Price [PLN]', 'impet_bialystok' );
-  $columns['products_origin'] = __( 'Origin', 'impet_bialystok' );
-  $columns['products_extra_info'] = __( 'Extra Info', 'impet_bialystok' );
+  $columns['products_price'] = __( 'Price [PLN]', 'impet-bialystok' );
+  $columns['products_origin'] = __( 'Origin', 'impet-bialystok' );
+  $columns['products_extra_info'] = __( 'Extra Info', 'impet-bialystok' );
 
   return $columns;
 }
@@ -379,14 +379,14 @@ function impet_products_column( $column, $post_id ) {
       if ( $price )
         echo number_format($price);
       else
-        _e( 'Unable to get products price', 'impet_bialystok' );
+        _e( 'Unable to get Products price', 'impet-bialystok' );
       break;
     case 'products_origin' :
       $origin = get_post_meta( $post_id , '_impet_products_origin' , true );
       if ( $origin )
         echo $origin;
       else
-        _e( 'Unable to get products origin', 'impet_bialystok' );
+        _e( 'Unable to get Products origin', 'impet-bialystok' );
       break;
     case 'products_extra_info' :
       $extra_info = get_post_meta( $post_id,
@@ -454,3 +454,15 @@ function impet_bialystok_scripts_and_styles() {
                       true );
 }
 add_action( 'wp_enqueue_scripts', 'impet_bialystok_scripts_and_styles' );
+
+
+
+
+
+/*******************************************************************************
+ * Load theme textdomain
+ */
+function theme_textdomain_setup(){
+    load_theme_textdomain('impet-bialystok', get_template_directory() . '/languages');
+}
+add_action('after_setup_theme', 'theme_textdomain_setup');
